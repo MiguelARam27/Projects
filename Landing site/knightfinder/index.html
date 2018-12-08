@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Welcome Knight!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="boostrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body style="background-color:black;">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="login_and_signup.js"></script>
+	<script src="sha1.js"></script>
+
+    <div class="container">
+      <div class="text-center">
+      <img src="images/knightD.png" class="nLogo"><br>
+    </div>
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading" style="color:#FFC904;"id = "header2"> Please sign in </h2>
+        <div style="color:#FFC904;">
+        <h2 class = "form-signin-heading" id = "header3" style = "display:none"  style="color:#FFC904;"> Please sign up</h2>
+      </div>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="email" style = "display:none" required autofocus>
+
+        <label for="inputUserName" class="sr-only">username</label>
+        <input type="username" id="userName" class="form-control" placeholder="Username" required autofocus>
+
+        <label for="inputFirstName" class="sr-only" >First Name</label>
+        <input type="firstname" id="fN" class="form-control" placeholder="First Name" style = "display:none" required autofocus>
+
+        <label for="inputLastName" class="sr-only">Last address</label>
+		    <input type="lastname" id="lS" class="form-control" placeholder="Last Name" style = "display:none" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder= "Password"  required autofocus>
+
+
+        <div class="checkbox">
+          <label id = "rememberMe" style="color:#FFC904;">
+            <input type="checkbox" value="remember-me" > Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" onclick="return doLogin();" id = "loginButton" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" onclick="signUpPage();" id = "signupButton" type="submit" >Don't have an account? Sign up</button>
+        <button class="btn btn-lg btn-primary btn-block" onclick="return signUp();" id = "signUpButton2" type="submit"  style = "display:none">Sign up</button>
+        <span id ="loginResult"></span>
+      </form>
+
+
+    </div> <!-- /container -->
+  </body>
+</html>

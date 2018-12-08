@@ -1,0 +1,48 @@
+footer{
+
+  background: #f9fafc;
+  padding: 100px 15px;
+
+}
+
+footer .social-container{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin:0 auto;
+  grid-column-gap: 1px;
+
+}
+
+footer .social-container a{
+  font-size: 3rem;
+  color:cyan;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+  display:inline-block;
+  padding: 10px;
+  margin:0 auto;
+
+
+}
+
+footer .social-container a:hover{
+  color:rgba(6, 6, 7,.9);
+}
+
+footer h5{
+  font-size: 1rem;
+  color:black;
+  text-transform: uppercase;
+  text-align: center;
+  margin:20px 0;
+}
+
+footer h6{
+  font-size: .8rem;
+  color:black;
+  text-transform: capitalize;
+  text-align: center;
+}

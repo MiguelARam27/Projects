@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico">
+
+		<title>Contacts</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<!-- Bootstrap core CSS -->
+	<link href="boostrap/css/bootstrap.css" rel="stylesheet">
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="css/signin.css" rel="stylesheet">
+	</head>
+
+<body style="background-color:#4c4c4a;">
+
+<div class="container-fluid">
+  <h1 id="myHeader" style="color:#edca04">My contacts</h1>
+	<div class="row">
+    <div class="col-sm-1" style="background-color:lavender;">.space1</div>
+    <div class="col-sm-10" style="background-color:lavenderblush;">.width10</div>
+    <div class="col-sm-1" style="background-color:lavender;">.space2</div>
+  </div>
+</div>
+<div class="row">
+<div class="col-sm-1" style="background-color:lavender;">.space1</div>
+
+	<div class="col-sm-10" style="background-color:#edca04">
+<table id="ourTable"  style="width:100%">
+	<thead>
+		<tr>
+			<th>Contact ID</th>
+			<th class="friendtable_Tleft">First Name</th>
+			<th class="friendtable_top">Last Name</th>
+			<th class="friendtable_top">Phonenumber</th>
+			<th class="friendtable_top">Email</th>
+			<th class="friendtable_Tright">Remove?</th>
+		</tr>
+	</thead>
+	<tbody id ="myTable"></tbody>
+</table>
+</div>
+<div class="col-sm-1" style="background-color:lavender;">space2</div>
+</div>
+
+
+<br>
+<input id="myInput" class="searchbox" type="text" placeholder="Search..">
+<div class="row">
+<div class="col-sm-1" style="background-color:lavender;">.space1</div>
+ 	<div class="col-sm-10" style="background-color:lavenderblush;">
+	 <table id="nTable"  style="width:100%" >
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phonenumber</th>
+                <th>email</th>
+		      	</tr>
+	    	</thead>
+           <tbody>
+        		<td><input placeholder="First name"type="text"id="firstName" ></td>
+        		<td ><input placeholder="Last Name" type="text" id="lastName"  ></td>
+        		<td ><input placeholder="Phonenumber"type="text" id="phoneNumber"></td>
+        		<td ><input placeholder="Email"type="text" id="Email" value="a"></td>
+        		<td ><input type="button" id="makeChanges" value="add"></td>
+					</tbody>
+		</table>
+ 	</div>
+ <div class="col-sm-1" style="background-color:lavender;">.space2</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="boostrap/css/bootstrap.min.css" rel="stylesheet">
+<script>
+var urlBase='http://knightfinder.com/WEBAPI';
+var extension ="aspx";
+var obj;
+
+ document.getElementById("myHeader").style.textAlign = "center";
+$('input:text').focus(
+function(){
+	$(this).css({'background-color' : "lightgrey"});
+});
+
+$('input:text').blur(
+function(){
+	$(this).css({'background-color' : 'white'});
+});
+
+$(document).ready(function(){
+	getContacts();
+
+
+	$("#myInput").on("keyup", function() {
+
+		var value = $(this).val().toLowerCase();
+
+		$("#ourTable tr").filter(function() {
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
+
+
+	$("#makeChanges").click(function()
+	{
+		var checker ='';
+		var a,b,c,d;
+		a=$('#firstName').val();
+		b=$('#lastName').val();
+		c=$('#phoneNumber').val();
+		d=$('#Email').val();
+
+		if(a == '' || b == '' || c == '' || d == '')
+		{
+			alert("Error: You are missing some information for your new contact");
+		}
+		else
+		{
+			addContact();
+			$('#firstName,#lastName,#phoneNumber,#Email').val('');
+		}
+	});
+})
+
+
+
+
+function addContact()
+{
+	var url = urlBase + '/AddContact.' + extension;
+	var firstName= document.getElementById("firstName").value;
+	var lastName = document.getElementById("lastName").value;
+	var phone = document.getElementById("phoneNumber").value;
+	var email = document.getElementById("Email").value;
+
+	var jsonPayload= '{"userId":1, firstName:"'+ firstName+'", lastName:"'+lastName+'", phone:"' +phone+'", email:"'+email+'"}';
+
+	$.post(url, jsonPayload)
+		.done(function(data){
+			alert(data.contactId);
+
+			if(data.contactId > 0)
+			{
+				var table = document.getElementById("ourTable");
+				var row = table.insertRow(table.rows.length);
+				var curCell = row.insertCell(0);
+				var curItem = document.createElement('text');
+				curItem.innerHTML = data.contactId;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(1);
+				curItem = document.createElement('text');
+				curItem.innerHTML = firstName;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(2);
+				curItem = document.createElement('text');
+				curItem.innerHTML = lastName;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(3);
+				curItem = document.createElement('text');
+				curItem.innerHTML = phone;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(4);
+				curItem = document.createElement('text');
+				curItem.innerHTML = email;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(5);
+				var btn = document.createElement('button');
+				btn.innerHTML = "Delete"
+				btn.onclick = (function(){
+					deleteFriend(this);
+
+				});
+				curCell.appendChild(btn);
+			}
+		});
+}
+
+
+function deleteFriend(btn)
+{
+	var row = btn.parentNode.parentNode;
+	var contactId = row.cells[0].innerText;
+	var url = urlBase + "/DeleteContact." + extension;
+	var jsonPayload = "{userId:1, contactId:" + contactId + "}";
+	alert(jsonPayload);
+
+	$.post(url, jsonPayload);
+	row.parentNode.removeChild(row);
+
+
+}
+
+function getContacts()
+{
+	var url = urlBase + "/GetContacts." + extension;
+	var table = document.getElementById("ourTable");
+	$.post(url, "{userId:1}")
+		.done(function(data){
+			var contacts = data.contacts;
+
+			for(var i = 0; i < contacts.length; i++)
+			{
+				var row = table.insertRow(table.rows.length);
+				var curCell = row.insertCell(0);
+				var curItem = document.createElement('text');
+				curItem.innerHTML = contacts[i].ContactID;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(1);
+				curItem = document.createElement('text');
+				curItem.innerHTML = contacts[i].firstName;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(2);
+				curItem = document.createElement('text');
+				curItem.innerHTML = contacts[i].lastName;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(3);
+				curItem = document.createElement('text');
+				curItem.innerHTML = contacts[i].phone;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(4);
+				curItem = document.createElement('text');
+				curItem.innerHTML = contacts[i].email;
+				curCell.appendChild(curItem);
+
+				curCell = row.insertCell(5);
+				var btn = document.createElement('button');
+				btn.innerHTML = "Delete"
+				btn.onclick = (function(){
+					deleteFriend(this);
+				});
+				curCell.appendChild(btn);
+			}
+			//alert(data.responseText);
+			//var jsonObject = JSON.parse(data.responseText);
+		})
+		.fail(function(data)
+		{
+			alert("fail");
+		});
+
+}
+</script>
+
+<br>
+
+</body>
+</html>

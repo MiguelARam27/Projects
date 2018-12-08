@@ -1,0 +1,161 @@
+#services{
+  padding:80px 15px;
+}
+
+#services .title{
+  position:relative;
+  width:200px;
+  height:200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 auto;
+
+}
+
+#services .title .circle{
+  background: #eef9ff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position:absolute;
+  top:23px;
+}
+
+#services .title h1{
+
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #16171b;
+  z-index: 1;
+  position: relative;
+  letter-spacing: 4px;
+  }
+
+
+ #services .services-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:40px;
+ }
+
+ #services .services-container .box{
+   background:rgba(255,255,255,0);
+   transition: all .4s eas-in-out;
+   padding: 40px;
+ }
+
+ #services .services-container .box:hover{
+   background:rgba(255,255,255,1);
+   -webkit-box-shadow: 0px 40px 74px 25px rgba(0,0,0,0.11);
+   -moz-box-shadow: 0px 40px 74px 25px rgba(0,0,0,0.11);
+   box-shadow: 0px 40px 74px 25px rgba(0,0,0,0.11);
+
+ }
+ #services .services-container .box .fas{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+ #services .services-container .box h5{
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* second set 2 columns */
+#services .services-container2{
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap:80px;
+   padding-left: 25px;
+   padding-right: 25px;
+}
+
+#services .services-container2 .box{
+  background:rgba(255,255,255,0);
+  transition: all .4s eas-in-out;
+  padding: 30px;
+}
+
+#services .services-container2 .box:hover{
+  background:rgba(255,255,255,1);
+  -webkit-box-shadow: 0px 40px 74px 25px rgba(0,0,0,0.11);
+  -moz-box-shadow: 0px 40px 74px 25px rgba(0,0,0,0.11);
+  box-shadow: 0px 40px 74px 25px rgba(0,0,0,0.11);
+
+}
+#services .services-container2 .box .fas{
+ font-size: 2rem;
+ margin-bottom: 2rem;
+}
+
+#services .services-container2 .box h5{
+ font-size: 25px;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ margin-bottom: 2rem;
+ text-align: center;
+}
+
+#services .services-container2 .box.orange .pic-container{
+ color:#f49542;
+ font-size: 60px;
+ text-align: center;
+}
+
+#services .services-container2 .box.orange{
+ border-bottom: 2px solid #f49542;
+}
+
+#services .services-container2 .box.green .pic-container{
+ color:#5aff19;
+ font-size: 60px;
+ text-align: center;
+}
+
+#services .services-container2 .box.green{
+ border-bottom: 2px solid #5aff19;
+}
+
+/* ************ */
+#services .services-container .box p{
+ line-height: 1.5;
+ color:#2b2b2b;
+ font-size: .8rem;
+ text-transform: uppercase;
+}
+
+ #services .services-container .box.blue{
+  border-bottom: 2px solid #52b8ff;
+ }
+
+ #services .services-container .box.blue .pic-container{
+  color:#52b8ff;
+  font-size: 60px;
+  text-align: center;
+ }
+
+ #services .services-container .box.red{
+  border-bottom: 2px solid #ff5253;
+ }
+ #services .services-container .box.red .pic-container{
+  color:#ff5253;
+  font-size: 60px;
+  text-align: center;
+ }
+
+ #services .services-container .box.yellow{
+  border-bottom: 2px solid #ffc853;
+ }
+
+ #services .services-container .box.yellow .pic-container{
+  color:#ffc853;
+  font-size: 60px;
+  text-align: center;
+ }

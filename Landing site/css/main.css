@@ -1,0 +1,52 @@
+@import "cssreset.css";
+@import url('"https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i,700" ');
+@import "top-section.css";
+@import "services.css";
+@import "portfolio-section.css";
+@import "about-me.css";
+@import "footer.css";
+
+
+.container{
+  max-width: 1100px;
+  margin:0 auto;
+}
+
+  header{
+    display:flex;
+    padding:20px 20px;
+    justify-content: space-between;
+  }
+
+header .logo{
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:white;
+  background: black;
+  padding:15px 20px;
+}
+header .header-menu{
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header .header-menu a{
+  text-transform: uppercase;
+  text-decoration: none;
+  color:black;
+  padding:0 10px;
+  transition:
+}
+
+
+
+header .header-menu a:hover{
+  font-weight: 700;
+  color:blue;
+}

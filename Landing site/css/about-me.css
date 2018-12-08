@@ -1,0 +1,128 @@
+#aboutMe{
+  padding:80px 0;
+}
+
+#aboutMe .large-title{
+  color:#c6e4ff;
+  font-weight: 900;
+  font-size: 4.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+#aboutMe .experience-container{
+
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#aboutMe .experience-container .large-icons .square {
+  border: 20px solid #52b8ff;
+  padding: 5px;
+  display:inline-block;
+  position: relative;
+  top: -100px;
+}
+
+#aboutMe .experience-container .large-icons .square .blue-box{
+  width: 200px;
+  height: 200px;
+  background: #52b8ff;
+  padding:5px;
+  color:white;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  align-items: center;
+}
+
+#aboutMe .experience-container .large-icons .circle {
+  border: 30px solid #ffc853;
+  padding: 5px;
+  display:inline-block;
+  position: relative;
+  border-radius: 50%;
+  top:15px;
+  left:50px;
+}
+
+
+#aboutMe .experience-container .large-icons .circle .white-box{
+  color:#ffc853;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 150px;
+  width:150px;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  top:50px;
+  left:100px;
+}
+
+#aboutMe .experience-container .info{
+
+
+}
+#aboutMe .experience-container .info .info-box{
+  padding:25px;
+  padding-top: 30px;
+
+}
+
+#aboutMe .experience-container .info .info-box h4{
+  color:#16171b;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+#aboutMe .experience-container .large-icons .triangle{
+  width:0;
+  height:0;
+  border-style: solid;
+  border-width: 0 150px 230px 150px;
+  border-color: transparent transparent #ff5253 transparent;
+  position: relative;
+
+}
+
+#aboutMe .experience-container .large-icons .triangle {
+  width:0;
+  height:0;
+  border-style: solid;
+  border-width: 0 150px 230px 150px;
+  border-color: transparent transparent #ff5253 transparent;
+  position: relative;
+}
+
+#aboutMe .experience-container .large-icons .triangle .triangle-box{
+  width:0;
+  height:0;
+  border-style: solid;
+  border-width: 0 93.75px 151.75px 93.75px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  left:-94px;
+  top:49px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:#ff5253;
+}
+
+#aboutMe .experience-container .large-icons .triangle .triangle-box .text {
+  top:98px;
+  left:-38px;
+  position: relative;
+}

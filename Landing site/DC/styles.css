@@ -1,0 +1,52 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+.main{
+  color:white;
+text-align: center;
+
+}
+
+body {
+  background:black;
+}
+
+
+/* ------Clock division------- */
+#clockdiv{
+  height:200px;
+  margin: 0 auto;
+  background-color: black;
+  width:100%;
+
+  position:absolute;
+  top:50%;
+  bottom:50%;
+  padding: 0px 5px 0px 5px;
+
+  transform: translateY(-50%);
+
+}
+
+#Clock{
+  color:#00a5ff;
+  text-align: center;
+  font-size: 37px;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: -2px -2px 36px cyan;
+}
+
+
+#Days{
+color: #00a5ff;
+text-align: center;
+font-family: 'Oswald', sans-serif;
+text-shadow: 0px 0px 36px cyan;
+}
+
+.chosen{
+color:white;
+text-shadow: 0px 0px 1em white;
+
+}

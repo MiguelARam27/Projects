@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<button onclick="x()"id="myBtn">check</button>
+<button onclick="getContacts()">getcontacts</button>
+<p>friends should display below</p>
+<p id="trial"> this should change</p>
+<p id="trial2">ummmm</p>
+
+<script>
+
+function x()
+{
+alert("hello world!");
+}
+
+
+
+var urlBase='http://knightfinder.com/WEBAPI';
+var extension ="aspx";
+
+
+function getContacts2()
+{
+	alert("test");
+	document.getElementById("trial").innerHTML = "test";
+}
+
+var userId=0;
+var extension ="aspx";
+var firstName="";
+var lastName="";
+var phoneNumber="";
+var email="";
+
+
+
+function getContacts()
+{
+//	http://knightfinder.com/WEBAPI/GetContacts.aspx
+var url =urlBase + '/GetContacts.' + extension;
+var xhr = new XMLHttpRequest();
+xhr.open("POST",url,true);
+xhr.setRequestHeader("Content-type","application/json; charsetUTF-8");
+try {
+	xhr.onreadystatechange = function()
+	{
+
+		if (this.readyState == 4 && this.status == 200)
+	{
+	//	alert(xhr.responseText);
+ 	   var jsonObject = JSON.parse(xhr.responseText);
+    //creating javascript object
+
+   //getting the values from the created object
+	 /*
+     userId=jsonObject.contacts[0].ContactID;
+     firstName=jsonObject.contacts[0].firstName;
+     lastName=jsonObject.contacts[0].lastName;
+	   phoneNumber=jsonObject.contacts[0].phone;
+	   email=jsonObject.contacts[0].email;
+*/
+//alert("user id is " + jsonObject.contacts[0][0]);
+/*
+		 alert("user id is " + userId);
+		 alert("user id is " + firstName);
+		 alert("user id is " + lastName);
+		 alert("user id is " + phoneNumber);
+		 alert("user id is " + email);
+*/
+	 var i;
+	 var output="";
+	 //for( i=0; i<5 ;i++ )
+	alert(document.getElementById("trial"));
+    alert("about to change paragraph");
+		document.getElementById("trial").innerHTML = jsonObject.contacts[0].phone;
+
+
+	}
+};
+xhr.send("{userId:1}");
+}
+ catch (err)
+   {
+	alert("the error is" + err.message);
+
+   }
+
+
+}
+
+</script>
+
+</body>
+</html>

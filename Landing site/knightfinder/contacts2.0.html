@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+    
+}
+</style>
+</head>
+<body>
+
+<table id="ourTable"  style="width:100%">
+        <thead>
+            <tr><th id="blankHeader"></th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phonenumber</th>
+                <th>email</th>
+				<th>Remove?</th>
+			</tr>
+		</thead>
+        <tbody>
+		</tbody>
+   </table>         
+ 
+ 
+ <br>
+ 
+<button id="addF" onclick="addFriend()">Add a friend</button>
+<button id ="deleteF" >Delete a friend</button>
+
+<input id="submit" type="submit" name="submit" value="Submit changes">
+
+<!--<button id ="hide">hide me></button>
+  -->    
+<script>
+//onclick="deleteFriend()"
+//add and delete friends
+function addFriend() 
+{
+    var table = document.getElementById("ourTable");
+    var rows = document.getElementById("ourTable").rows.length;
+    var row = table.insertRow(rows);
+    
+    for(var i = 0; i < 5; i++)
+    {
+        var cell1 = row.insertCell(i);
+        var inputItem = document.createElement('input');
+        if(i==0)
+			inputItem.setAttribute("type","checkbox");
+        cell1.appendChild(inputItem);
+    }
+	
+	var curCell = row.insertCell(5);
+	var btn = document.createElement('button');
+	btn.innerHTML = "Delete"
+	btn.onclick = (function(){
+		deleteFriend(this);
+	});
+	curCell.appendChild(btn);
+}
+
+
+function deleteFriend(btn) {
+	var row = btn.parentNode.parentNode;
+	row.parentNode.removeChild(row);
+}
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+      //hides the first collumn initially
+      //since i used a blank header, so the rows would allign
+      //i had to include th so it would hide the whole collumn
+     $('td:nth-child(1),th:nth-child(1)').hide();
+     
+     
+      //This will keep the checkboxes hidden once the user 
+      //wants to add a new friend
+     $("#addF").click(function(){
+     $('td:nth-child(1),th:nth-child(1)').hide();
+     });
+     
+     //this will show the check boxes to the user
+     $("#deleteF").click(function(){
+     $('td:nth-child(1),th:nth-child(1)').show();
+     alert("check which friend(s) you want to delete");
+     });
+     
+     
+      //this will delete a certain friend that 
+      //the user checked off.
+      //*CONCERN* when user adds a friend or just changes some info
+      //and "submit changes" is pressed
+      $("#submit").click(function()
+      {
+      $("#ourTable input:checkbox:checked").closest('tr').remove();
+      $('td:nth-child(1),th:nth-child(1)').hide();
+      });
+      
+      
+      
+    $('input:text').focus(
+    function(){
+        $(this).css({'background-color' : "lightgrey"});
+    });
+
+    $('input:text').blur(
+    function(){
+        $(this).css({'background-color' : 'white'});
+    
+});
+     
+     /*
+    $("#hide").click(function(){
+        $('td:nth-child(1),th:nth-child(1)').hide();
+        //$('td:nth-child(2),th:nth-child(2)').hide();
+    });
+   */
+   
+});
+</script>
+
+</body>
+</html>
+
+
+
