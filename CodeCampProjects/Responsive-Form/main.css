@@ -1,0 +1,236 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* #A81612
+#451400 */
+/* main content */
+/* header */
+body{
+  /* background-image: url("https://cdn.vox-cdn.com/thumbor/kp3mZdiP7453j6Eu4wOkGdHkocU=/0x0:960x768/1200x800/filters:focal(315x381:467x533)/cdn.vox-cdn.com/uploads/chorus_image/image/61607061/chipotle_loyalty_program.0.jpg"); */
+  background: url("https://images.unsplash.com/photo-1505826759037-406b40feb4cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header{
+  width: 1100px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color:white;
+
+
+}
+
+header h1{
+
+  font-size: 36px;
+  font-weight: 800;
+  padding-top: 20px;
+  display:block;
+}
+
+header p{
+  font-size: 20px;
+  font-weight:500;
+  padding-top:15px;
+}
+
+/* //Hello */
+form{
+  width: 700px;
+  /* background: #A81612; */
+  height:100%;
+  margin: 0 auto;
+  justify-content:center;
+  border-radius:10px;
+  font-family: 'Oswald', sans-serif;
+  /* opacity:0.90; */
+  	background:hsla(2, 81%, 36%,.90);
+}
+
+.inputs label{
+  /* border:solid red 1px; */
+  margin: 10px;
+}
+
+.inputs input{
+  /* border:solid yellow 5px; */
+  display: inline-block;
+  position: relative;
+  left:10px;
+}
+.label label{
+  margin:10px;
+  padding-top:10px;
+  padding-bottom: 20px;
+}
+
+.inputs input{
+  margin:0px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+.select label{
+  margin:10px;
+  padding-top:10px;
+  padding-bottom: 20px;
+}
+.select select{
+  margin:10px;
+  padding-top:10px;
+  padding-bottom: 20px;
+}
+
+.radio p{
+  margin:10px;
+  /* background: green; */
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color:white;
+}
+
+.label{
+ display:grid;
+ grid-template-columns: auto auto auto auto;
+ /* background: blue; */
+ grid-column-gap: 3px;
+
+}
+.label label{
+  margin: 10px;
+}
+
+.label input{
+  /* border:solid yellow 5px; */
+  display: inline-block;
+  position: relative;
+  left:10px;
+}
+/* Checkbox section containing customer experience */
+.checkboxes{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+
+  grid-column-gap: 16px;
+}
+
+.checkboxes .customer{
+
+}
+.customer p{
+  margin:10px;
+  /* background: green; */
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color:white;
+}
+.checkboxes .customer p{
+  margin:10px;
+  /* background: green; */
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.experience{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.experience input{
+  /* border:solid red 3px; */
+  margin:5px;
+}
+.experience label{
+  /* border:solid red 3px; */
+  margin:5px;
+}
+
+/* Service */
+.checkboxes .service{
+
+}
+
+.checkboxes .service p{
+  margin:10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color:white;
+}
+
+.checkboxes .service .servicecontainer{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* background: blue; */
+  grid-column-gap: 1px;
+}
+
+.checkboxes .service .servicecontainer input{
+  /* border:solid red 3px; */
+  margin:5px;
+}
+.checkboxes .service .servicecontainer label{
+  /* border:solid red 3px */
+  margin:5px;
+}
+
+.comments{
+  width:80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.comments p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.comments textarea{
+  padding: 5px;
+
+}

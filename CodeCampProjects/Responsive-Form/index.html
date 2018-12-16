@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <title>Form</title>
+</head>
+<body>
+  <header>
+    <h1 id="title">FeedBack Form</h1>
+    <p id="description">Tell us how we did!</p>
+  </header>
+  <form id="survey-form">
+    <div class="form">
+    <div class="inputs">
+      <label for="name" id="name-label">Name:</label>
+      <input type="text"id="name" placeholder="Enter your Name">
+      <br>
+      <label for="email" id="email-label">Email:</label>
+      <input type="email" id="email" placeholder="Enter your Email">
+      <br>
+      <label for="number" id="number-label">Number:</label>
+      <input type="number" placeholder="10" min="0" max="10">
+    </div>
+    <div class="select">
+      <label for="dropdown">Main Topping:</label>
+      <select name="Meal" id="dropdown">
+        <option value="">Barbacoa</option>
+        <option value="">Carnitas</option>
+        <option value="">Chicken</option>
+        <option value="">Sofritas</option>
+        <option value="">Steak</option>
+        <option value="">Veggies</option>
+      </select>
+      <br>
+    </div>
+    <div class="radio">
+      <p>What other toppings did you have?</p>
+      <br>
+      <div class="label">
+        <label for="White Rice">White Rice    <input type="radio"></label>
+        <label for="White Rice">Brown Rice<input type="radio"></label>
+        <label for="White Rice">Pinto Beans<input type="radio"></label>
+        <label for="White Rice">Black Beans<input type="radio"></label>
+        <label for="White Rice">Fajitas<input type="radio"></label>
+        <label for="White Rice">Hot Sauce<input type="radio"></label>
+        <label for="White Rice">Mild Sauce<input type="radio"></label>
+        <label for="White Rice">Pico      <input type="radio"></label>
+        <label for="White Rice">Guac      <input type="radio"></label>
+        <label for="White Rice">Lettuce     <input type="radio"></label>
+        <label for="White Rice">Cheese     <input type="radio"></label>
+        <label for="White Rice">Sour cream <input type="radio"></label>
+      </div>
+    </div>
+    <div class="checkboxes">
+      <div class="customer">
+       <p>How was your experience today?</p>
+       <div class="experience">
+       <label for="great!">Excellent<input type="checkbox"></label>
+       <label for="great!">Great<input type="checkbox"></label>
+       <label for="great!">Acceptable<input type="checkbox"></label>
+       <label for="great!">Lacking<input type="checkbox"></label>
+       <label for="great!">Bad<input type="checkbox"></label>
+       <label for="great!">Terrible<input type="checkbox"></label>
+       </div>
+      </div>
+      <div class="service">
+       <p>How fast was our service today?</p>
+       <div class="servicecontainer">
+       <label for="fast">Fast<input type="checkbox"></label>
+       <label for="fast">Moderate<input type="checkbox"></label>
+       <label for="fast">Slow<input type="checkbox"></label>
+       </div>
+      </div>
+    </div>
+  </div>
+  <div class="comments">
+    <p>Any comments or concerns</p>
+    <textarea name="name" rows="8" cols="80" placeholder="Please leave any comments or concerns here"></textarea>
+  </div>
+  <div class="button">
+    <input type="submit">
+  </div>
+
+  </form>
+
+</body>
+</html>
