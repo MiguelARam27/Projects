@@ -1,3 +1,5 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +18,21 @@
   <form id="survey-form">
     <div class="form">
     <div class="inputs">
+      <br>
+      <br>
       <label for="name" id="name-label">Name:</label>
-      <input type="text"id="name" placeholder="Enter your Name">
+      <input type="text"id="name" placeholder="Enter your Name" value="name"required>
+      <br>
       <br>
       <label for="email" id="email-label">Email:</label>
-      <input type="email" id="email" placeholder="Enter your Email">
+      <input type="email" id="email" placeholder="Enter your Email" required>
       <br>
-      <label for="number" id="number-label">Number:</label>
-      <input type="number" placeholder="10" min="0" max="10">
+      <br>
+      <label for="number" id="number-label">Meal Rating:</label>
+      <input type="number" id="number" placeholder="10" min="0" max="10" required>
     </div>
     <div class="select">
-      <label for="dropdown">Main Topping:</label>
+      <label for="dropdown" class="dropdown" id="maintopping">Main Topping:</label>
       <select name="Meal" id="dropdown">
         <option value="">Barbacoa</option>
         <option value="">Carnitas</option>
@@ -35,57 +41,67 @@
         <option value="">Steak</option>
         <option value="">Veggies</option>
       </select>
-      <br>
+
     </div>
     <div class="radio">
-      <p>What other toppings did you have?</p>
-      <br>
+      <div class="radiop"><p>What other toppings did you have?</p></div>
+
       <div class="label">
-        <label for="White Rice">White Rice    <input type="radio"></label>
-        <label for="White Rice">Brown Rice<input type="radio"></label>
-        <label for="White Rice">Pinto Beans<input type="radio"></label>
-        <label for="White Rice">Black Beans<input type="radio"></label>
-        <label for="White Rice">Fajitas<input type="radio"></label>
-        <label for="White Rice">Hot Sauce<input type="radio"></label>
-        <label for="White Rice">Mild Sauce<input type="radio"></label>
-        <label for="White Rice">Pico      <input type="radio"></label>
-        <label for="White Rice">Guac      <input type="radio"></label>
-        <label for="White Rice">Lettuce     <input type="radio"></label>
-        <label for="White Rice">Cheese     <input type="radio"></label>
-        <label for="White Rice">Sour cream <input type="radio"></label>
+        <label for="White Rice">White Rice    <input name="toppings" type="radio" value="Wrice"></label>
+        <label for="White Rice">Brown Rice<input name="toppings" value="Wrice"type="radio"></label>
+        <label for="White Rice">Pinto Beans<input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Black Beans<input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Fajitas<input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Hot Sauce<input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Mild Sauce<input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Pico      <input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Guac      <input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Lettuce     <input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Cheese     <input name="toppings" value="Wrice" type="radio"></label>
+        <label for="White Rice">Sour cream <input name="toppings" value="Wrice" type="radio"></label>
       </div>
     </div>
     <div class="checkboxes">
       <div class="customer">
        <p>How was your experience today?</p>
        <div class="experience">
-       <label for="great!">Excellent<input type="checkbox"></label>
-       <label for="great!">Great<input type="checkbox"></label>
-       <label for="great!">Acceptable<input type="checkbox"></label>
-       <label for="great!">Lacking<input type="checkbox"></label>
-       <label for="great!">Bad<input type="checkbox"></label>
-       <label for="great!">Terrible<input type="checkbox"></label>
+       <label for="great!">Excellent<input  type="checkbox" value="Excellent"></label>
+       <label for="great!">Great<input type="checkbox" value="Great"></label>
+       <label for="great!">Acceptable<input type="checkbox" value="Acceptable"></label>
+       <label for="great!">Lacking<input value="Lacking" type="checkbox"></label>
+       <label for="great!">Bad<input type="checkbox" value="Bad" ></label>
+       <label for="great!">Terrible<input type="checkbox" value="Terrible"></label>
        </div>
       </div>
       <div class="service">
        <p>How fast was our service today?</p>
        <div class="servicecontainer">
-       <label for="fast">Fast<input type="checkbox"></label>
-       <label for="fast">Moderate<input type="checkbox"></label>
-       <label for="fast">Slow<input type="checkbox"></label>
+       <label for="fast">Fast<input type="checkbox" value="Fast" ></label>
+       <label for="fast">Moderate<input type="checkbox" value="Fast" ></label>
+       <label for="fast">Slow<input type="checkbox" value="Fast" ></label>
        </div>
       </div>
     </div>
   </div>
   <div class="comments">
-    <p>Any comments or concerns</p>
-    <textarea name="name" rows="8" cols="80" placeholder="Please leave any comments or concerns here"></textarea>
+    <p>Any comments or concerns?</p>
+    <textarea name="name" rows="6" cols="70" placeholder="Please leave any comments or concerns here"></textarea>
   </div>
   <div class="button">
-    <input type="submit">
+    <input type="submit" id="submit">
   </div>
 
   </form>
 
 </body>
 </html>
+
+<!--
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding!
+
+- The freeCodeCamp Team
+
+-->
