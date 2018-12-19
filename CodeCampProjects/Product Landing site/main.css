@@ -212,7 +212,7 @@ table {
 }
 .dinning{
     width:98%;
-    height:1800px;
+    height:1323px;
     margin:0 auto;
 }
 /* Dinning info */
@@ -274,48 +274,62 @@ table {
     text-align: center;
     width:100%;
 }
-.dinning .menu{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-column-gap:2px;
+
+#slider, .wrap, .slide-content{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    width:100%;
+    height:100vh;
+    overflow-x:hidden;
+}
+.wrap{position: relative;}
+
+.slide{
+    background-size:cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+    height:100%;
+    width:100%;
+}
+.slide1{background-image: url("https://c1.staticflickr.com/4/3315/3241926435_cb6ec2c588_b.jpg");}
+.slide2{background-image: url("https://c1.staticflickr.com/1/57/158381302_59f2de8d40_b.jpg");}
+.slide3{background-image: url("https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");}
+
+.slide-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
-
-.dinning .menu .morning{
-    box-sizing:border-box;
-    border-radius: 15px;
-    background-repeat: none;
-    background-size: cover;
-    background:blue;
-
+ .slide-content span{
+    font-size: 5rem;
+    color:#fff;
 }
 
-.dinning .menu .morning .breakfast p{
-color:white;
-}
-.dinning .menu .morning .breakfast{
+ .arrow{
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    margin-top:-35px;
+    /* width:0;
+    height:0; */
+    border-style: solid;
+} 
 
-    width:100%;
-    height:30%;
-}
-.dinning .menu .morning .breakfast h1{
-    font-family: 'Staatliches', cursive;
-    font-size:40px;
-}
-.dinning .menu .morning .breakfast h2{
-    font-family: 'Staatliches', cursive;
-    font-size:20px;
-}
-
-.dinning .menu .noon{
-    background:yellow;
-    box-sizing:border-box;
-
-}
-.dinning .menu .night{
-    background:green;
-    box-sizing:border-box;
-}
+#arrow-left{
+    border-width:30px 40px 30px 0;
+    left:0;
+    border-color:transparent #fff transparent transparent;
+    margin-left:30px;
+}  
+#arrow-right{
+    border-width:30px 0 30px 40px;
+    right:0;
+    border-color:transparent transparent transparent #fff;
+    margin-right:30px;
+}  
 
 .owner-container{
     display:grid;
