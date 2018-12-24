@@ -331,6 +331,54 @@ table {
     margin-right:30px;
 }  
 
+.extra-container{
+  width:99%;
+  height:500px;
+  margin:0 auto;
+}
+.extra-container .extra{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:darkblue;
+  height:100%;
+  grid-column-gap: 10px;
+}
+.extra-container .extra .youtube{
+    display:flex;
+    flex-direction: row-reverse;
+    background:yellow;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+  }
+  .extra-container .extra form{
+    display:flex;
+    flex-direction: column;
+    background:green;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height:100%;
+  }
+  .extra-container .extra form h1{
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  .extra-container .extra form h2{
+    font-size: 1.1em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    display:block;
+    width:100%;
+}
 .owner-container{
     display:grid;
     grid-template-columns:1fr 1fr;

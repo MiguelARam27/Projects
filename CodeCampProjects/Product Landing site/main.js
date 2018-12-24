@@ -47,3 +47,8 @@ arrowLeft.addEventListener("click",function(){
     slideLeft();
 });
 startSlide();
+
+
+
+
+
