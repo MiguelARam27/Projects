@@ -2,7 +2,7 @@ body{
     margin:0;
   }
   span {
-    color: green;
+    color: rgb(255, 255, 255);
   }
 
   .container{
@@ -12,11 +12,42 @@ body{
       flex-direction: column;
       justify-content: center;
       width:100%;
-      height:80vh;
-      background:blue;
+      height:100vh;
+      background:#afa8c9;
   }
 
+  .button{
+      text-align: center;
+  }
   button{
       display:block;
       margin-top: 8px;
+      outline:none;
+      border:none;
+      display:block;
+      background-color:#3500f5;
+      font-size:16px;
+      font-weight:300px;
+      color:white;
+      letter-spacing:2px;
+      padding:15px 50px;
+      box-shadow: 0 6px #100888;
+      border-radius:20px;
+      cursor:pointer;
+  }
+
+  select{
+    height: 30px;
+    width: 100px;
+    border-radius: 0;
+    padding-left: 10px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: 75px center;
   }
